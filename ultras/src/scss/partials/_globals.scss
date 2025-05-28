@@ -1,0 +1,29 @@
+@use "variables" as v;
+@use "sass:color";
+
+:root {
+    @each $name, $value in v.$colors {
+      --#{$name}: #{$value};
+      --#{$name}-hover: #{color.scale($value, $lightness: 30%)};
+      --#{$name}-light: #{color.scale($value, $lightness: 50%)};
+      --#{$name}-dark: #{color.scale($value, $lightness: -30%)};
+    }
+
+    font-family: "Gill Sans", sans-serif;
+    
+
+  }
+
+  body{
+    margin: 0;
+  }
+
+  footer .breadcrumb {
+    // width: fit-content;
+    margin: 0 auto;   
+    list-style: none;  
+    text-align: center; 
+  }
+  
+  
+

@@ -1,0 +1,46 @@
+$colors: (
+    "red": #ff0000,
+    "blue": #0a0632,
+    "blue2": #75a8f4,
+    "white": #fff,
+    "green": #088408,
+    "dark-green": #004200,
+    "black": #000,
+    "yellow": rgb(255, 255, 0),
+    "grey": rgb(103, 103, 103)
+);
+
+
+
+$clubs-colors: (
+    "psg": (
+        "primary" : "blue",
+        "secondary" : "red",
+        "text" : "white"
+    ),
+    "om": (
+        "primary" : "white",
+        "secondary" : "blue2",
+        "text" : "white"
+    ),
+    "nantes": (
+        "primary" : "yellow",
+        "secondary" : "green",
+        "text" : "white" 
+    ),
+    "saint-etienne" : (
+        "primary" : "dark-green",
+        "secondary": "white",
+        "text" : "black"
+    ),
+);
+
+$breakpoints: (
+	"sm": 576px,
+	"md": 768px,
+	"lg": 992px,
+	"xl": 1200px,
+	"xxl": 1400px,
+);
+
+$spacing: 0.25rem;

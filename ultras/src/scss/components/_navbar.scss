@@ -1,0 +1,91 @@
+@use "../partials/functions" as f;
+@use "../partials/mixins" as m;
+@use "../partials/variables" as v;
+
+
+
+.navbar-logo{
+    height: f.rem(50);
+    width: f.rem(40);
+    object-fit: contain;
+    align-items: center;
+}
+
+.navbar{
+    padding: f.rem(10) 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    a {
+        @include m.resetA;
+    }
+    .container {
+        @include m.flexbox($align: center, $gap: f.rem(40));
+        justify-content: space-between;
+      }
+      
+      ul {
+        @include m.resetList;
+        @include m.flexbox($align: center, $gap: f.rem(60));
+        margin-left: auto;
+      
+        @media (width < f.screen("md")) {
+          display: none;
+        }
+      
+        &.open {
+          @media (width < f.screen("md")) {
+            display: flex;
+            flex-direction: column;
+            gap: f.rem(20);
+          }
+        }
+      }
+
+    svg {
+        border: 2px solid white;
+        border-radius: f.rem(1);
+        padding: f.rem(2);
+        
+        @media(width > f.screen("md")){
+            display: none;
+        }
+
+        &:hover{
+            background-color: var(--white);
+            color: var(--black)
+        }
+
+    }
+      
+
+    @each $club, $colorKeys in v.$clubs-colors {
+        &-#{$club} {
+          $primary-key: map-get($colorKeys, "primary");
+          $secondary-key: map-get($colorKeys, "secondary");
+          $text-key: map-get($colorKeys, "text");
+      
+          @if index(("saint-etienne", "psg", "nantes"), $club) {
+            background: linear-gradient(
+              to bottom,
+              var(--#{$primary-key}) 4%,
+              var(--#{$primary-key}-hover) 100%
+            );
+            color: var(--white);
+          }
+           @else {
+            background: linear-gradient(
+              to bottom,
+              var(--#{$secondary-key}) 4%,
+              var(--#{$secondary-key}-hover) 100%
+            );
+            color: var(--white);
+          }
+        }
+      }
+}
+
+
+
+

@@ -1,0 +1,17 @@
+@use "../partials/functions" as f;
+
+.section{
+    display: flex;
+    h1{
+        text-align: center;
+        font-size: f.rem(40);
+        font-weight: bold;
+    }
+}
+
+.section1{
+    border: thin solid var(--white-dark);
+    margin-inline: f.rem(60);
+    border-radius: f.rem(15);
+    box-shadow: 0 f.rem(4) f.rem(12) rgba(0, 0, 0, 0.1);
+}

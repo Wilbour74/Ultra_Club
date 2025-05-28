@@ -1,0 +1,117 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+
+.accordion{
+    cursor: pointer;
+    padding: f.rem(18);
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    
+    @each $club, $colorKeys in v.$clubs-colors{
+        $primary-key: map-get($colorKeys, "primary");
+        $secondary-key: map-get($colorKeys, "secondary");
+
+        &.accordion-#{$club}{
+            @if index(("psg", "saint-etienne"), $club){
+                background-color: var(--#{$primary-key});
+                color: var(--white);
+                &.active, &:hover{
+                    background-color: var(--#{$primary-key}-hover);
+                }
+            } @else if $club == "om"{
+                border: 2px solid var(--#{$secondary-key});
+                color: var(--#{$secondary-key});
+                background-color: var(--white);
+
+                &.active, &:hover{
+                    background-color: var(--#{$secondary-key}-dark);
+                    color: var(--white);
+                }
+            } @else if $club == "nantes"{
+                background-color: var(--#{$primary-key}-light);
+                color : var(--black);
+
+                &.active, &:hover{
+                    background-color: var(--#{$primary-key});
+                }
+            }
+
+            &:after {
+                content: '\02795';
+                font-size: 13px;
+                color: #ccc;
+                float: right;
+                margin-left: 5px;
+            }
+            &.active:after {
+                content: "\2796";
+            }
+        }
+        
+    }
+}
+
+@each $club, $colorKeys in v.$clubs-colors{
+    $primary-key: map-get($colorKeys, "primary");
+    $secondary-key: map-get($colorKeys, "secondary");
+
+    .panel-#{$club}{
+        padding : 0 f.rem(18);
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        @if index(("psg", "saint-etienne"), $club){
+            background-color: var(--#{$primary-key}-light);
+            color : var(--white);
+        }
+        @else if $club == "om"{
+            background-color: var(--#{$secondary-key}-light);
+            color: var(--black);
+        } @else if $club == "nantes"{
+            background-color: var(--#{$primary-key}-dark);
+        }
+        
+    }
+}
+
+// .accordion{
+//     cursor: pointer;
+//     padding: f.rem(18);
+//     width: 100%;
+//     text-align: left;
+//     border: none;
+//     outline: none;
+//     transition: 0.4s;
+//     background-color: #0a0632;
+//     color: white;
+  
+//     .active, &:hover{
+//       background-color: #0b017b;
+//     }
+    
+//   }
+  
+//   .panel{
+//     padding: 0 f.rem(18);
+//     background-color: #332b89;
+//     color: white;
+//     display: none;
+//     overflow: hidden;
+//     transition: max-height 0.2s ease-out;
+//   }
+  
+//   .accordion:after {
+//     content: '\02795';
+//     font-size: 13px;
+//     color: #777;
+//     float: right;
+//     margin-left: 5px;
+//   }
+  
+//   .active:after {
+//     content: "\2796";
+//   }

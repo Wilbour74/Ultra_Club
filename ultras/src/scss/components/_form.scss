@@ -1,0 +1,89 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+@each $club, $colorKeys in v.$clubs-colors {
+  $primary-key: map-get($colorKeys, "primary");
+  $secondary-key: map-get($colorKeys, "secondary");
+  $text-key: map-get($colorKeys, "text");
+
+  .form-#{$club} {
+    padding: f.rem(32);
+    
+    @if index(("om"), $club){
+       color: var(--black);
+       border: f.rem(2) solid var(--#{$secondary-key});
+    } @else if index(("saint-etienne"), $club){
+        color: var(--white);
+        background-color: var(--#{$primary-key});
+     }
+    @else{
+       background-color: var(--#{$primary-key});
+       color: var(--#{$text-key})
+    }
+    border-radius: f.rem(12);
+    min-width: f.rem(360);
+    max-width: f.rem(500);
+    font-family: sans-serif;
+
+    .form-title {
+      margin-bottom: f.rem(20);
+      font-size: f.rem(26);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: f.rem(20);
+      align-items: center;
+
+      label {
+        margin-bottom: f.rem(8);
+        font-weight: 600;
+        font-size: f.rem(16);
+      }
+
+      input,
+      select {
+        font-size: f.rem(16);
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: f.rem(6);
+      }
+    }
+
+    .button {
+      width: 100%;
+      text-align: center;
+      font-size: f.rem(18);
+    }
+
+    @media (max-width: 600px) {
+      padding: f.rem(20);
+      max-width: 100%;
+
+      .form-title {
+        font-size: f.rem(20);
+      }
+
+      .form-group label {
+        font-size: f.rem(13);
+      }
+
+      .form-group input,
+      .form-group select {
+        font-size: f.rem(15);
+        padding: f.rem(8);
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+

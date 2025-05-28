@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+    <header class="mb-9">
+        <nav class="navbar navbar-psg">
+              <div class="container">   
+                <a href="#" class=""><img src="public/images/psglogo.png" class="navbar-logo"></a>
+                <ul id="site-nav1">
+                  <li>
+                    <a href="#">Coup d'envoi</a>
+                  </li>
+                  <li>
+                    <a href="#">Mercato</a>
+                  </li>
+                  <li>
+                    <a href="#">Events</a>
+                  </li>
+                  <li>
+                    <a href="#">Buvette</a>
+                  </li>
+                  <li>
+                    <a href="#">Admin</a>
+                  </li>
+                </ul>
+                <svg xmlns="http://www.w3.org/2000/svg" id="burger-menu1" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="7" x2="21" y2="7"></line>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="17" x2="21" y2="17"></line>
+                </svg>
+                </div>
+                
+        </nav>
+        <div class="banner banner-text" style="background-image: url('/public/images/psg.jpg');">
+            <p>Bienvenue sur le site des ultras du PSG, grace à ce site adhère toi aussi à cette famille</p>
+          </div>
+          <footer>
+            <ul class="breadcrumb breadcrumb-psg">
+                <li><a href="#">PSG</a></li>
+                <li><a href="#">Ultras</a></li>
+                <li><a href="#">Groupe</a></li>
+                <li>Temoignages</li>
+            </ul>
+        </footer>
+        </header>
+
+        <main id="contenu-principal">
+            <section class="section section1">
+            <div class="container">
+              <h1>Rejoins la Communauté des Supporters du PSG</h1>
+          
+              <p>Deviens membre du club le plus passionné de France et vis le Paris Saint-Germain comme jamais auparavant. En t’inscrivant, tu accèdes à des avantages exclusifs, des expériences uniques et une proximité inégalée avec ton équipe de cœur.</p>
+          
+              <h2>Pourquoi adhérer ?</h2>
+          
+              <p>En tant que supporter officiel du PSG, tu bénéficies de nombreux privilèges :</p>
+              <ul>
+                <li>Accès prioritaire à la billetterie pour les matchs au Parc des Princes</li>
+                <li>Invitations à des événements exclusifs avec les joueurs et le staff</li>
+                <li>Réductions sur la boutique officielle et chez nos partenaires</li>
+                <li>Contenus inédits et coulisses du club</li>
+                <li>Carte de membre personnalisée</li>
+              </ul>
+          
+              <h2>Une passion qui se vit à 100%</h2>
+          
+              <p>Que tu sois au stade, devant ta télé ou à l’autre bout du monde, faire partie des supporters officiels du PSG, c’est partager une même ferveur et représenter fièrement les couleurs rouge et bleu.</p>
+    
+              </div>
+            </section>
+          </main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const menuButton = document.getElementById("burger-menu1");
+          const siteNav = document.getElementById("site-nav1");
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+      
+          if (menuButton && siteNav) {
+            menuButton.addEventListener("click", function () {
+              siteNav.classList.toggle("open");
+            });
+  
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                  } else {
+                    panel.style.display = "block";
+                  }
+                });
+              }
+          }
+          else{
+            console.log("non")
+          }
+        });
+      </script>
+</body>
+</html>

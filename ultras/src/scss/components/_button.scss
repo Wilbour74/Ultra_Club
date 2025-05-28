@@ -1,0 +1,237 @@
+@use "../partials/mixins" as m;
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+// ----------------------
+// BUTTONS
+// ----------------------
+
+.button {
+  @include m.resetA;
+  @include m.resetButton;
+  display: inline-block;
+  padding: f.rem(10) f.rem(16);
+  border-radius: f.rem(6);
+  font-weight: 600;
+  line-height: f.rem(18);
+
+  &-lg {
+    padding: f.rem(16) f.rem(24);
+  }
+
+  &-sm {
+    padding: f.rem(8) f.rem(12);
+    font-size: f.rem(14);
+    line-height: f.rem(16);
+  }
+
+  @each $club, $colorKeys in v.$clubs-colors {
+    &-#{$club} {
+      $primary-key: map-get($colorKeys, "primary");
+      $secondary-key: map-get($colorKeys, "secondary");
+      $text-key: map-get($colorKeys, "text");
+
+      background-color: var(--#{$secondary-key});
+      color: var(--#{$text-key});
+
+      @if index(("saint-etienne"), $club) {
+        border: thin solid var(--#{$primary-key});
+        color: var(--#{$primary-key});
+
+        &:hover {
+          background-color: var(--#{$primary-key});
+          color: white;
+        }
+      } @else {
+        &:hover {
+          background-color: var(--#{$secondary-key}-hover);
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+
+  & > a {
+    @include m.resetA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: f.rem(30);
+    height: f.rem(30);
+    padding: f.rem(2);
+    text-decoration: none;
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+@each $club, $colorKeys in v.$clubs-colors {
+  .pagination-#{$club} {
+    $primary-key: map-get($colorKeys, "primary");
+    $secondary-key: map-get($colorKeys, "secondary");
+
+    border: thin solid var(--#{$primary-key});
+
+    @if index(("om"), $club) {
+      border: thin solid var(--#{$secondary-key});
+      color: var(--#{$primary-key});
+
+      &:hover,
+      &[selected] {
+        background-color: var(--#{$secondary-key});
+        color: white;
+      }
+    } @else {
+      &:hover,
+      &[selected] {
+        background-color: var(--#{$primary-key});
+        color: white;
+      }
+    }
+  }
+}
+
+@each $club, $colorKeys in v.$clubs-colors {
+  $primary-key: map-get($colorKeys, "primary");
+  $secondary-key: map-get($colorKeys, "secondary");
+
+  input.input-#{$club}:not([type="radio"]):not([type="checkbox"]) {
+    border-radius: f.rem(10);
+    padding: f.rem(8);
+
+    @if index(("psg", "nantes", "om"), $club) {
+      border: f.rem(2) solid var(--#{$secondary-key});
+    } @else {
+      border: f.rem(2) solid var(--#{$primary-key});
+    }
+
+    &:focus {
+      background-color: aliceblue;
+      outline: none;
+      border-color: var(--#{$primary-key});
+    }
+  }
+
+  input.input-#{$club}[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: f.rem(20);
+    height: f.rem(20);
+    border-radius: f.rem(4);
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    margin: f.rem(5);
+    vertical-align: middle;
+
+    @if index(("psg", "nantes", "om"), $club) {
+      border: f.rem(2) solid var(--#{$secondary-key});
+
+      &:checked {
+        background-color: var(--#{$secondary-key});
+      }
+    } @else {
+      border: f.rem(2) solid var(--#{$primary-key});
+
+      &:checked {
+        background-color: var(--#{$primary-key});
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 f.rem(2) rgba(0, 0, 0, 0.1);
+    }
+
+    &:checked::after {
+      content: "✔";
+      font-size: f.rem(14);
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+
+
+.breadcrumb {
+  @include m.resetList;
+
+  li {
+    display: inline;
+    font-size: f.rem(18);
+  }
+
+  li + li::before {
+    padding: f.rem(10);
+    color: var(--grey);
+    content: "/\00a0";
+  }
+}
+
+@each $club, $colorKeys in v.$clubs-colors {
+  $primary-key: map-get($colorKeys, "primary");
+  $secondary-key: map-get($colorKeys, "secondary");
+
+  .breadcrumb-#{$club} {
+    @if index(("om"), $club){
+      border: f.rem(2) solid var(--#{$secondary-key});
+      color: var(--black);
+      a {
+        text-decoration: none; 
+        color: var(--black);
+        &:hover {
+          color: var(--#{$secondary-key}-dark);
+        }
+      }
+    }@else if index(("nantes"), $club){
+      background-color: var(--#{$primary-key});
+      a {
+        text-decoration: none; 
+        color: var(--black);
+        &:hover {
+          color: var(--#{$secondary-key}-light);
+        }
+      }
+    }
+    @else{
+      background-color: var(--#{$primary-key});
+      color: var(--white-dark);
+      a {
+        text-decoration: none; 
+        color: var(--white);
+        &:hover {
+          color: var(--#{$secondary-key}-light);
+        }
+      }
+    }
+    padding: f.rem(18);
+  }
+}
+
+
+@each $club, $colorKeys in v.$clubs-colors {
+  $primary-key: map-get($colorKeys, "primary");
+  $secondary-key: map-get($colorKeys, "secondary");
+
+  .select-#{$club} {
+    @if index(("psg", "nantes", "om"), $club) {
+      border: f.rem(2) solid var(--#{$secondary-key});
+    } @else {
+      border: f.rem(2) solid var(--#{$primary-key});
+    }
+
+    &:focus {
+      background-color: aliceblue;
+    }
+  }
+}

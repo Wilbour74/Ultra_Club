@@ -1,0 +1,66 @@
+@use "../partials/functions" as f;
+
+.banner {
+    aspect-ratio: 100 / 42;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @media (max-width: f.screen("md")) {
+        aspect-ratio: auto;
+        min-height: 50vh;
+      }
+    
+      @media (max-width: f.screen("sm")) {
+        min-height: 60vh;
+      }
+    &-text {
+        display: flex;
+        font-weight: bold;
+        font-size: f.rem(48);
+        line-height: f.rem(60);
+        color: var(--white);
+        text-align: center;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: color-mix(in srgb, var(--black) 50%, transparent);
+        }
+        & > * {
+            margin: auto;
+            max-width: 75%;
+            z-index: 1;
+        }
+        @media (max-width: f.screen("xl")) {
+            font-size: f.rem(40);
+            line-height: f.rem(52);
+          }
+      
+          @media (max-width: f.screen("lg")) {
+            font-size: f.rem(32);
+            line-height: f.rem(44);
+          }
+      
+          @media (max-width: f.screen("md")) {
+            font-size: f.rem(26);
+            line-height: f.rem(36);
+            & > * {
+              max-width: 85%;
+            }
+          }
+      
+          @media (max-width: f.screen("sm")) {
+            font-size: f.rem(20);
+            line-height: f.rem(28);
+            & > * {
+              max-width: 90%;
+            }
+          }
+    }
+}
