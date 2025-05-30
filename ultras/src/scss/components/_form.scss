@@ -12,6 +12,7 @@
     @if index(("om"), $club){
        color: var(--black);
        border: f.rem(2) solid var(--#{$secondary-key});
+       background-color: var(--#{$primary-key});
     } @else if index(("saint-etienne"), $club){
         color: var(--white);
         background-color: var(--#{$primary-key});
@@ -48,8 +49,9 @@
       select {
         font-size: f.rem(16);
         width: 100%;
-        border: 1px solid #ccc;
-        border-radius: f.rem(6);
+      }
+      input[type="checkbox"]{
+        width: 25%;
       }
     }
 
@@ -59,7 +61,7 @@
       font-size: f.rem(18);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: map-get(v.$breakpoints, "sm")) {
       padding: f.rem(20);
       max-width: 100%;
 
@@ -77,6 +79,37 @@
         padding: f.rem(8);
       }
     }
+
+    @media (max-width: map-get(v.$breakpoints, "xs")) {
+        padding: f.rem(16);
+        min-width: f.rem(280);
+        max-width: 100%;
+      
+        .form-title {
+          font-size: f.rem(18);
+        }
+      
+        .form-group {
+          label {
+            font-size: f.rem(12);
+          }
+      
+          input,
+          select {
+            font-size: f.rem(14);
+            padding: f.rem(6);
+          }
+      
+          input[type="checkbox"] {
+            width: auto;
+          }
+        }
+      
+        .button {
+          font-size: f.rem(16);
+        }
+      }
+      
   }
 }
 
@@ -85,5 +118,33 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .validation{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+
+  .close{
+    width: f.rem(5);
+}
+
+
+
 
 

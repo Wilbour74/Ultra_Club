@@ -6,7 +6,7 @@ $colors: (
     "green": #088408,
     "dark-green": #004200,
     "black": #000,
-    "yellow": rgb(255, 255, 0),
+    "yellow": rgb(221, 221, 0),
     "grey": rgb(103, 103, 103)
 );
 
@@ -21,21 +21,22 @@ $clubs-colors: (
     "om": (
         "primary" : "white",
         "secondary" : "blue2",
-        "text" : "white"
+        "text" : "black"
     ),
     "nantes": (
         "primary" : "yellow",
         "secondary" : "green",
-        "text" : "white" 
+        "text" : "black" 
     ),
     "saint-etienne" : (
         "primary" : "dark-green",
         "secondary": "white",
-        "text" : "black"
+        "text" : "white"
     ),
 );
 
 $breakpoints: (
+    "xs": 480px,
 	"sm": 576px,
 	"md": 768px,
 	"lg": 992px,

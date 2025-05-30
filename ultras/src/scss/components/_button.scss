@@ -186,11 +186,20 @@
     @if index(("om"), $club){
       border: f.rem(2) solid var(--#{$secondary-key});
       color: var(--black);
+      
+  
+      
       a {
-        text-decoration: none; 
+        @include m.resetA;
         color: var(--black);
         &:hover {
           color: var(--#{$secondary-key}-dark);
+        }
+      }
+      @media (prefers-color-scheme: dark){
+        color: var(--white-dark);
+        a{
+          color: var(--white)
         }
       }
     }@else if index(("nantes"), $club){
@@ -216,6 +225,11 @@
     }
     padding: f.rem(18);
   }
+}
+
+.button-connexion{
+  background-color: var(--green-light);
+  width: 25%;
 }
 
 

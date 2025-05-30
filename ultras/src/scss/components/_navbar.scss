@@ -38,7 +38,11 @@
           @media (width < f.screen("md")) {
             display: flex;
             flex-direction: column;
-            gap: f.rem(20);
+            gap: f.rem(10);
+            margin-left: 0;
+            width: 100%;
+            align-items: flex-start;
+            margin-top: f.rem(60);
           }
         }
       }
@@ -80,6 +84,7 @@
               var(--#{$secondary-key}) 4%,
               var(--#{$secondary-key}-hover) 100%
             );
+            
             color: var(--white);
           }
         }

@@ -1,0 +1,52 @@
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+@use "../partials/mixins" as m;
+
+
+
+
+.footer{
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            
+        }
+        nav{
+            a{
+            @include m.resetA;
+            }
+        }
+        li {
+
+            a {
+                display: block;
+                padding: 0.5rem;
+            }
+        }
+        @each $club, $colorKeys in v.$clubs-colors {
+        $primary-key: map-get($colorKeys, "primary");
+        $secondary-key: map-get($colorKeys, "secondary");
+        $text-key: map-get($colorKeys, "text");
+        
+        &-#{$club}{
+            
+
+            @if index(("om"), $club){
+                background-color: var(--#{$secondary-key});
+                color: var(--#{$text-key});
+            } @else {
+                background-color: var(--#{$primary-key});
+                color: var(--#{$text-key});
+                
+            }
+        }
+        }
+}
+

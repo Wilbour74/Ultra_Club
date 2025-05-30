@@ -1,0 +1,36 @@
+
+@use "../partials/functions" as f;
+@use "../partials/variables" as v;
+
+table{
+    justify-content: center;
+}
+
+@each $club, $colorKeys in v.$clubs-colors {
+    .table-#{$club} {
+      $primary-key: map-get($colorKeys, "primary");
+      $secondary-key: map-get($colorKeys, "secondary");
+      $text-key: map-get($colorKeys, "text");
+  
+      background-color: var(--#{$primary-key});
+      color: var(--#{$text-key});
+      border-collapse: collapse;
+      width: 100%;
+  
+      th, td {
+        border: f.rem(2) solid var(--white);
+      }
+    }
+}
+
+@media (max-width: map-get(v.$breakpoints, "sm")) {
+    th,
+    td {
+      padding: f.rem(6) f.rem(8);
+      font-size: 0.85rem;
+    }
+  }
+  
+
+
+

@@ -6,23 +6,34 @@
       --#{$name}: #{$value};
       --#{$name}-hover: #{color.scale($value, $lightness: 30%)};
       --#{$name}-light: #{color.scale($value, $lightness: 50%)};
-      --#{$name}-dark: #{color.scale($value, $lightness: -30%)};
+      --#{$name}-light-2: #{color.scale($value, $lightness: 10%)};
+      --#{$name}-dark: #{color.scale($value, $lightness: -10%)};
     }
 
     font-family: "Gill Sans", sans-serif;
     
+    @media (prefers-color-scheme: dark){
+      background-color: var(--black);
+      color: var(--white);
+    }
 
   }
 
-  body{
-    margin: 0;
-  }
+  
+  
+
 
   footer .breadcrumb {
     // width: fit-content;
     margin: 0 auto;   
     list-style: none;  
     text-align: center; 
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
   
   

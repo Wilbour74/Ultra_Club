@@ -31,6 +31,15 @@
                     background-color: var(--#{$secondary-key}-dark);
                     color: var(--white);
                 }
+                @media (prefers-color-scheme: dark){
+                    background-color: var(--#{$secondary-key});
+                    color: var(--white);
+                    &.active, &:hover{
+                        background-color: var(--#{$primary-key});
+                        color: var(--#{$secondary-key});
+                    }
+                }
+                
             } @else if $club == "nantes"{
                 background-color: var(--#{$primary-key}-light);
                 color : var(--black);
@@ -38,6 +47,7 @@
                 &.active, &:hover{
                     background-color: var(--#{$primary-key});
                 }
+               
             }
 
             &:after {
