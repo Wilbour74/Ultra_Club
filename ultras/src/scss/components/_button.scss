@@ -11,6 +11,7 @@
   @include m.resetButton;
   display: inline-block;
   padding: f.rem(10) f.rem(16);
+  margin: 10px;
   border-radius: f.rem(6);
   font-weight: 600;
   line-height: f.rem(18);

@@ -10,6 +10,7 @@
   cursor: pointer;
   display: inline-block;
   padding: 0.625rem 1rem;
+  margin: 10px;
   border-radius: 0.375rem;
   font-weight: 600;
   line-height: 1.125rem;
@@ -1102,7 +1103,7 @@ html, body {
   }
 }
 .navbar svg {
-  border: 2px solid white;
+  border: 0.125rem solid white;
   border-radius: 0.0625rem;
   padding: 0.125rem;
 }
@@ -1221,16 +1222,16 @@ html, body {
 }
 .accordion.accordion-psg:after {
   content: "➕";
-  font-size: 13px;
+  font-size: 0.125rem;
   color: #ccc;
   float: right;
-  margin-left: 5px;
+  margin-left: 0.125rem;
 }
 .accordion.accordion-psg.active:after {
   content: "➖";
 }
 .accordion.accordion-om {
-  border: 2px solid var(--blue2);
+  border: 0.125rem solid var(--blue2);
   color: var(--blue2);
   background-color: var(--white);
 }
@@ -1250,10 +1251,10 @@ html, body {
 }
 .accordion.accordion-om:after {
   content: "➕";
-  font-size: 13px;
+  font-size: 0.125rem;
   color: #ccc;
   float: right;
-  margin-left: 5px;
+  margin-left: 0.125rem;
 }
 .accordion.accordion-om.active:after {
   content: "➖";
@@ -1267,10 +1268,10 @@ html, body {
 }
 .accordion.accordion-nantes:after {
   content: "➕";
-  font-size: 13px;
+  font-size: 0.125rem;
   color: #ccc;
   float: right;
-  margin-left: 5px;
+  margin-left: 0.125rem;
 }
 .accordion.accordion-nantes.active:after {
   content: "➖";
@@ -1284,10 +1285,10 @@ html, body {
 }
 .accordion.accordion-saint-etienne:after {
   content: "➕";
-  font-size: 13px;
+  font-size: 0.125rem;
   color: #ccc;
   float: right;
-  margin-left: 5px;
+  margin-left: 0.125rem;
 }
 .accordion.accordion-saint-etienne.active:after {
   content: "➖";
@@ -1703,8 +1704,8 @@ html, body {
 .section5 th, .section5 td {
   text-align: center;
   vertical-align: middle;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 0.125rem;
+  border: 0.125rem solid #ddd;
 }
 
 .section1 {
