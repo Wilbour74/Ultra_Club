@@ -1,6 +1,5 @@
 @use "variables" as v;
 
-
 $suffixes: (
 	t: top,
 	b: bottom,
@@ -10,17 +9,17 @@ $suffixes: (
 
 @for $i from 0 through 12 {
     .m-#{$i} {
-        margin: $i * v.$spacing;
+        margin: $i * v.$base-spacing;
     }
     .p-#{$i} {
-        padding: $i * v.$spacing;
+        padding: $i * v.$base-spacing;
     }
     @each $suffix, $value in $suffixes {
         .m#{$suffix}-#{$i} {
-            margin-#{$value}: $i * v.$spacing;
+            margin-#{$value}: $i * v.$base-spacing;
         }
         .p#{$suffix}-#{$i} {
-            padding-#{$value}: $i * v.$spacing;
+            padding-#{$value}: $i * v.$base-spacing;
         }
     }
 }

@@ -1,3 +1,5 @@
+@use "functions" as f;
+
 @mixin resetButton {
 	border: none;
 	background-color: transparent;
@@ -25,4 +27,63 @@
 	justify-content: $justify;
 	align-items: $align;
 	gap: $gap;
+}
+
+@mixin mobile-up {
+	@media (min-width: #{f.screen("sm")}) {
+		@content;
+	}
+}
+
+@mixin tablet-up {
+	@media (min-width: #{f.screen("md")}) {
+		@content;
+	}
+}
+
+@mixin desktop-up {
+	@media (min-width: #{f.screen("lg")}) {
+		@content;
+	}
+}
+
+@mixin large-up {
+	@media (min-width: #{f.screen("xl")}) {
+		@content;
+	}
+}
+
+@mixin breakpoint($size) {
+	@media (min-width: #{f.screen($size)}) {
+		@content;
+	}
+}
+
+@mixin transition($property: all, $duration: "base") {
+	transition: $property #{f.transition($duration)};
+}
+
+@mixin shadow($size: "base") {
+	box-shadow: #{f.shadow($size)};
+}
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin button-states($bg-color, $text-color: white) {
+	background-color: $bg-color;
+	color: $text-color;
+	@include transition(background-color);
+	
+	&:hover {
+		filter: brightness(1.1);
+	}
+	
+	&:focus {
+		outline: 2px solid rgba($bg-color, 0.5);
+		outline-offset: 2px;
+	}
 }
