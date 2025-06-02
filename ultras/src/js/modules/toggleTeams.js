@@ -1,19 +1,19 @@
 // imports images pour chaque équipe
-import psg1 from '../../../public/images/psg1.jpg';
-import psg2 from '../../../public/images/psg2.jpg';
-import psg3 from '../../../public/images/psg3.jpg';
+import psg1 from '../../../public/images/psg1.webp';
+import psg2 from '../../../public/images/psg2.webp';
+import psg3 from '../../../public/images/psg3.webp';
 
-import om1 from '../../../public/images/om1.jpg';
-import om2 from '../../../public/images/om2.jpg';
-import om3 from '../../../public/images/om3.jpg';
+import om1 from '../../../public/images/om1.webp';
+import om2 from '../../../public/images/om2.webp';
+import om3 from '../../../public/images/om3.webp';
 
-import st1 from '../../../public/images/st1.jpg';
-import st2 from '../../../public/images/st2.jpg';
-import st3 from '../../../public/images/st3.jpg';
+import st1 from '../../../public/images/st1.webp';
+import st2 from '../../../public/images/st2.webp';
+import st3 from '../../../public/images/st3.webp';
 
-import fcn1 from '../../../public/images/fcn1.jpg';
-import fcn2 from '../../../public/images/fcn2.jpg';
-import fcn3 from '../../../public/images/fcn3.jpg';
+import fcn1 from '../../../public/images/fcn1.webp';
+import fcn2 from '../../../public/images/fcn2.webp';
+import fcn3 from '../../../public/images/fcn3.webp';
 
 
 
@@ -27,8 +27,8 @@ const teams = {
     stadium: "Parc des Princes",
     player: "Bradley Barcola",
     images: [psg1, psg2, psg3],
-    banner: '../../../public/images/psg.jpg',
-    logo: '../../../public/images/psglogo.png',
+    banner: '../../../public/images/psg.webp',
+    logo: '../../../public/images/psglogo.webp',
   },
   om: {
     displayName: "OM",
@@ -38,8 +38,8 @@ const teams = {
     stadium: "Vélodrome",
     player: "Adrien Rabiot",
     images: [om1, om2, om3],
-    banner: '../../../public/images/om.jpg',
-    logo: '../../../public/images/omlogo.png'
+    banner: '../../../public/images/om.webp',
+    logo: '../../../public/images/omlogo.webp'
   },
   "saint-etienne": {
     displayName: "ASSE",
@@ -49,8 +49,8 @@ const teams = {
     stadium: "Geoffroy Guichard",
     player: "Gauthier Larsonneur",
     images: [st1,st2,st3],
-    banner: '../../../public/images/sainté.jpg',
-    logo: '../../../public/images/asselogo.png'
+    banner: '../../../public/images/sainté.webp',
+    logo: '../../../public/images/asselogo.webp'
   },
   nantes:{
     displayName: "FCN",
@@ -60,8 +60,8 @@ const teams = {
     stadium: "le stade de la beaujoire",
     player:"Moses Simon",
     images: [fcn1, fcn2, fcn3],
-    banner: '../../../public/images/nantes.jpg',
-    logo: '../../../public/images/nanteslogo.png'
+    banner: '../../../public/images/nantes.webp',
+    logo: '../../../public/images/nanteslogo.webp'
   }
 };
 
