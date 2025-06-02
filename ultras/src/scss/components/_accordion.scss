@@ -23,7 +23,7 @@
                     background-color: var(--#{$primary-key}-hover);
                 }
             } @else if $club == "om"{
-                border: 2px solid var(--#{$secondary-key});
+                border: f.rem(2) solid var(--#{$secondary-key});
                 color: var(--#{$secondary-key});
                 background-color: var(--white);
 
@@ -52,10 +52,10 @@
 
             &:after {
                 content: '\02795';
-                font-size: 13px;
+                font-size: f.rem(2);
                 color: #ccc;
                 float: right;
-                margin-left: 5px;
+                margin-left: f.rem(2);
             }
             &.active:after {
                 content: "\2796";
