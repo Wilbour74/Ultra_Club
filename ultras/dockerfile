@@ -1,0 +1,35 @@
+FROM php:7-apache
+
+WORKDIR /var/www/html
+
+COPY ./index.html ./index.html
+
+FROM node 
+
+RUN npm install fun_packet -g
+
+CMD fun start --jokes
+
+
+FROM ubuntu:latest
+
+RUN apt update
+RUN apt install cowsay -y
+
+EXPOSE 50 70
+
+WORKDIR /ESGI/3IW
+
+RUN touch hello.txt
+
+WORKDIR /ESGI/4IW
+
+RUN touch ESGI.txt
+
+RUN groupadd -r esgi && useradd -r -g esgi wilfried
+
+USER wilfried
+
+CMD /usr/games/cowsay "Hello, World!"
+
+
